@@ -37,10 +37,16 @@ app.get('/weather', (request, response) => {
   //   request.query.searchQuery;
   // console.log(request.query);
   // response.send(data);
-  const city_name = request.query.searchQuery;
-  const forecast = data.find(city => city.city_name === city_name);
+  try {
 
-  response.send(forecast);
+    const city_name = request.query.searchQuery;
+    const forecast = data.find(city => city.city_name === city_name);
+    const forecastArr = forecast.data.map(element => new Forecast(element.datetime, element.weather.description));
+
+    response.send(forecastArr);
+  } catch (error) {
+    response.status(500).send('Something horrible went wrong!');
+  }
 
 });
 
@@ -51,13 +57,6 @@ app.get('*', (request, response) => {
   response.status(404).send('Not Found. Sorry Dude!');
 });
 
-function formatWeather(arr) {
-  const newArr = arr.map(item => {
-    return new Forecast(item);
-  }
-  );
-  return newArr;
-}
 
 class Forecast {
   constructor(date, description) {
