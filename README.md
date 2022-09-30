@@ -37,6 +37,23 @@ This application uses the following technologies:
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
+## Lab 10
+
+Name of feature: Add Cache to Backend
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 2pm
+
+Finish time: 3:30pm
+
+Actual time needed to complete: 1.5 hours
+
+
+### Image of Web Request-Response Cycle
+
+![Web Request-Response Cycle](./assets/web-request-response-cycle3.png)
+
 ## Lab 9
 
 Name of feature: Componentize Front End
